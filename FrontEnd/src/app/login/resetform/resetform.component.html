@@ -1,0 +1,26 @@
+<div id="image">
+
+    <div class="loginBox">
+
+        <div class="glass">
+
+            <img src="et-icon.png" class="user">
+            <h1>Reset Your<br> Password</h1>
+            <!--<form class="form-reset" [formGroup]="form">-->
+            <form id="frmResetPassword" action="" method="" enctype="application/x-www-form-urlencoded">
+                <div class="inputBox">
+                    <input type="text" placeholder="New Password "  id="newPassword" name="newPassword"  #newPasswords>
+                    <!--<span><img src="resetpic/new-password-icon.png"></span>-->
+                </div>
+                <div class="inputBox">
+                    <input type="password" placeholder="Confirm Password "  id="rePassword" name="rePassword"  #rePasswords>
+                    <!--<span><img src="resetpic/comfirm-password-icon.png"></span>-->
+                </div>
+
+                <input (click)="updatePassword()" id="btnDone" type="submit" name="done" value="Done" >
+                       <!--(click)="updatePassword()">-->
+
+            </form>
+        </div>
+    </div>
+</div>

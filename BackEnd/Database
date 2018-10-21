@@ -1,0 +1,58 @@
+drop database resthouse;
+create database resthouse;
+use resthouse;
+
+CREATE TABLE `adminlogin` (
+	`aid` INT(11) NOT NULL AUTO_INCREMENT,
+	`username` VARCHAR(255),
+	`password` VARCHAR(255),
+	`repassword` VARCHAR(255),
+	PRIMARY KEY (`aid`)
+)ENGINE=INNODB;
+
+CREATE TABLE `packaage` (
+  `packageId` int(11) NOT NULL,
+  `packagename` varchar(255),
+  PRIMARY KEY (`packageId`)
+)ENGINE=INNODB;
+
+CREATE TABLE `instument` (
+  `instumentId` int(11) NOT NULL,
+  `instrumentName` varchar(255),
+  `instrumentFee` varchar(255),
+  PRIMARY KEY (`instumentId`)
+)ENGINE=INNODB;
+
+CREATE TABLE `mealCatagory` (
+  `mealCataId` int(11) NOT NULL,
+  `mealCataName` varchar(255),
+  PRIMARY KEY (`mealCataId`)
+)ENGINE=INNODB;
+
+CREATE TABLE `meal` (
+  `mealId` int(11) NOT NULL ,
+  `mealName` varchar(255),
+  `mealCatagoryId` int(255),
+  `mealDescription` varchar(500),
+  `mealFee` decimal(10,2),
+  PRIMARY KEY (`mealId`),
+  FOREIGN KEY (`mealCatagoryId`) references mealCatagory(`mealCataId`)
+)ENGINE=INNODB;
+
+CREATE TABLE `event` (
+  `eventId` int(11) NOT NULL ,
+  `eventName` varchar(255),
+  `packageId` varchar(255),
+  `date` varchar(255),
+  `time` vatchar(255),
+  `organizer` varchar(255),
+  `organizerContact` varchar(255),
+  `locationId` varchar(255),
+  `cityId` varchar(255),
+  `eventFee` varchar(255),
+  PRIMARY KEY (`eventId`),
+  FOREIGN KEY (`packageId`) references package(`packaageId`),
+  FOREIGN KEY (`locationId`) references location(`locationId`),
+  FOREIGN KEY (`cityId`) references city(`cityId`)
+)ENGINE=INNODB;
+

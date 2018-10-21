@@ -1,0 +1,18 @@
+.col-md-5{
+    background-color: darkslateblue;
+    height: 600px;
+    background-image: url("../image/Vaamana32.jpg");
+    border-color: white;
+}
+.col-md-7{
+    background-color: white;
+    height: 600px;
+
+}
+.simage{
+    width: 290px;
+    height: 153px;
+    background-image: url("../image/imageswatada.jpg");
+    border: ridge;
+    border-color: white;
+}

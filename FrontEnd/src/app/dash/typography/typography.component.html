@@ -1,0 +1,89 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <form id="frmAddPackage" action="" method="post" enctype="application/x-www-form-urlencoded">
+                    <br>
+
+                    <p class="form-group">
+                        <label>Package Id :</label>
+                        <input
+                                (keyup.enter)="createPackage(id)" #id
+                                class="form-control" name="packageId" placeholder="Enter Package Id">
+                    </p>
+                    <p class="form-group">
+                        <label>Package Name :</label>
+                        <input
+                                (keyup.enter)="createPackage(name)" #name
+                                class="form-control" name="packageName" placeholder="Enter Package Name">
+                    </p>
+
+                </form>
+
+                <button type="submit" class="btn btn-round btn-fill btn-info pull-right">Add To Table</button>
+
+                <br>
+                <br>
+                <br>
+
+                <table class="table" id="table">
+                    <thead style="background-color: darkblue; color: white">
+                    <tr>
+                        <th></th>
+                        <th>Package Id</th>
+                        <th>Package Name</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+
+
+                    <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <a>
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+
+
+
+                </table>
+            </div>
+            <div class="col-md-4">
+                <br>
+                <ul>
+                    <br>
+
+                    <input type="text" name="search" placeholder="Search.."><button type="submit"><i class="fa fa-search"></i></button>
+
+                    <br>
+                    <br>
+                    <li>
+                        <a href="viewall"><i class="fa fa-forward" aria-hidden="true"></i>
+                            Manage Event
+                        </a>
+                    </li>
+                    <br>
+                    <li>
+                        <a href=""><i class="fa fa-forward" aria-hidden="true"></i>
+                            Manage Rest House
+                        </a>
+                    </li>
+                    <br>
+                    <li>
+                        <a href="viewmeals"><i class="fa fa-forward" aria-hidden="true"></i>
+                            Manage Meals
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

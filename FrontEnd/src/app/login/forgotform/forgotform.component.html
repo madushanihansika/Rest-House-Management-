@@ -1,0 +1,23 @@
+<div id="image">
+
+    <div class="loginBox">
+
+        <div class="glass">
+
+            <img src="got-icon.png" class="user">
+            <h1>Forgot Your Password</h1>
+            <!--<form class="form-forgot" [formGroup]="form">-->
+            <form id="frmforgotPassword" action="" method="" enctype="application/x-www-form-urlencoded">
+                <div class="inputBox">
+                    <input type="text" class="form-control" name="email" placeholder="Type Your Email " #emails >
+                           <!--aria-describedby="basic-addon1" formControlName="email" #email>-->
+                    <!--<span><img src="forgor-image/EMail-icon.png"></span>-->
+                </div>
+
+                <input (click)="sendPasswordResetToMail()" id="btnSend" type="submit" name="send" value="Send" >
+                       <!--(click)="sendPasswordResetToMail(email)">-->
+
+            </form>
+        </div>
+    </div>
+</div>

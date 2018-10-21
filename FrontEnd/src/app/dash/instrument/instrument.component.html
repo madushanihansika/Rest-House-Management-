@@ -1,0 +1,67 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <form id="frmInstrument" action="" method="post" enctype="application/x-www-form-urlencoded">
+                    <br>
+
+                    <p class="form-group">
+                        <label>Instrument Id :</label>
+                        <input
+                                (keyup.enter)="createinstrument(id)" #id
+                                class="form-control" name="instrumentId" placeholder="Enter Instrument Id">
+                    </p>
+                    <p class="form-group">
+                        <label>Instrument Name :</label>
+                        <input
+                                (keyup.enter)="createinstrument(name)" #name
+                                class="form-control" name="instrumentName" placeholder="Enter Instrument Name">
+                    </p>
+                    <p class="form-group">
+                        <label>Instrument Fee :</label>
+                        <input
+                                (keyup.enter)="createinstrument(fee)" #fee
+                                class="form-control" name="instrumentFee" placeholder="Enter Instrument Fee">
+                    </p>
+
+                </form>
+
+                <button type="submit" class="btn btn-round btn-fill btn-info pull-right">Save & Add Table</button>
+
+                <br>
+                <br>
+                <br>
+
+                <table class="table" id="table">
+                    <thead style="background-color: darkblue; color: white">
+                    <tr>
+                        <th></th>
+                        <th>Instrument Id</th>
+                        <th>Instrument Name</th>
+                        <th>Instrument Fee</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+
+
+                    <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="updateinstrument" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </a></td>
+                    </tr>
+                    </tbody>
+
+
+
+                </table>
+            </div>
+            <!--<div class="col-md-4">-->
+
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+

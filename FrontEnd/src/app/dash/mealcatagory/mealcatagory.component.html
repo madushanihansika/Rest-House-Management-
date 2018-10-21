@@ -1,0 +1,60 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <form id="frmAddMealCatagory" action="" method="post" enctype="application/x-www-form-urlencoded">
+                    <br>
+
+                    <p class="form-group">
+                        <label>Catagory Id :</label>
+                        <input
+                                (keyup.enter)="createmealcata(id)" #id
+                               class="form-control" name="catagoryId" placeholder="Enter CatagoryPackage Id">
+                    </p>
+                    <p class="form-group">
+                        <label>Catagory Name :</label>
+                        <input
+                                (keyup.enter)="createmealcata(name)" #name
+                               class="form-control" name="catagoryName" placeholder="Enter Catagory Name">
+                    </p>
+
+                </form>
+                <div><a href="viewmeals" class="btn btn-round btn-fill btn-info pull-right">Back</a> </div>
+                <button type="submit" class="btn btn-round btn-fill btn-info pull-right">Add To Table</button>
+
+                <br>
+                <br>
+                <br>
+
+                <table class="table" id="table">
+                    <thead style="background-color: darkblue; color: white">
+                    <tr>
+                        <th></th>
+                        <th>Catagory Id</th>
+                        <th>Catagory Name</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+
+
+                    <tbody>
+                    <tr>
+                        <td></td>
+                        <td>{{createmealcata.id}}</td>
+                        <td>{{createmealcata.name}}</td>
+                        <td>
+                            <a href="updatemealcata" >
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+

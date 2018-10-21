@@ -1,0 +1,15 @@
+.col-md-8{
+     background-color: white;
+     height: 600px;
+ }
+.col-md-4{
+    background-color: darkblue;
+    height: 600px;
+    border: double;
+    background-image: url("../viewmeals/rsz_downloads31.jpg");
+}
+.image{
+    height: 75px;
+    background-color: darkblue;
+    width: 325px;
+}

@@ -1,0 +1,14 @@
+.col-md-5{
+    left: 0px;
+    background-color: darkblue;
+    margin-top: 0px;
+    width: 250px;
+    color: dimgray;
+}
+
+.col-md-7{
+    background-color: white;
+    width: 810px;
+
+}
+

@@ -1,0 +1,177 @@
+drop database resthouse;
+create database resthouse;
+use resthouse;
+
+Create table User(
+userid int not null AUTO_INCREMENT,
+firstname varchar(50),
+username varchar(10) Not null,
+email varchar(50),
+password varchar(15),
+Constraint primary key (userid)
+) ENGINE=INNODB;
+
+Create table LanvageType(
+LTid varchar(100),
+LType varchar(100),
+Constraint primary key (LTid)
+) ENGINE=INNODB;
+
+create table city(
+	cityid varchar (100),
+	cityname varchar(100) not null,
+	constraint primary key(cityid)
+	)engine=innodb;
+
+Create table Guide(
+guideid varchar(100),
+name varchar(50),
+cityid varchar (100),
+LTid varchar(100),
+contact varchar(15),
+address varchar(100),
+mail varchar(50),
+Constraint primary key (guideid),
+constraint foreign key (LTid ) references LanvageType(LTid),
+constraint foreign key (cityid ) references city(cityid)
+) ENGINE=INNODB;
+
+
+create table locationtype(
+	typeid varchar (100),
+	type varchar(100) not null,
+	constraint primary key(typeid)
+	)engine=innodb;
+
+create table location(
+	cityid varchar (100),
+	typeid varchar (100) not null,
+	locationid varchar (100),
+	location varchar (100) not null,
+	constraint primary key(locationid),
+	constraint foreign key(cityid) references city(cityid),
+	constraint foreign key(typeid) references locationtype(typeid)
+	)engine=innodb;
+
+Create table Vehicle(
+vehicle_id int not null,
+vehicle_name varchar(50),
+cityid varchar(100),
+locationid varchar (100),
+d_name varchar(50),
+contact varchar(15),
+mail varchar(50),
+Constraint primary key (vehicle_id),
+constraint foreign key (cityid ) references city(cityid),
+constraint foreign key (locationid) references location(locationid)
+) ENGINE=INNODB;
+
+create table package(
+	packageid varchar (100),
+	packagename varchar (100),
+	constraint primary key(packageid)
+	)engine=innodb;
+
+create table resthouse(
+	packageid varchar (100),
+	cityid varchar (100),
+	locationid varchar (100),
+	resthouseid varchar (100),
+	resthousename varchar(100),
+	gestlimit int,
+	cost double(10,2),
+	constraint primary key(resthouseid),
+	constraint foreign key(packageid) references package(packageid),
+	constraint foreign key(cityid) references city(cityid),
+	constraint foreign key(locationid) references location(locationid)
+	)engine=innodb;
+
+
+create table accommodationdetails(
+	packageid varchar (100),
+	resthouseid varchar (100),
+	adid varchar (100),
+	bookingdate int not null,
+	bookingtime int not null,
+	enddate int not null,
+	endtime int not null,
+	customername varchar (100),
+	contact varchar (100),
+	email varchar (100),
+	constraint primary key(adid),
+	constraint foreign key(packageid) references package(packageid) ,
+	constraint foreign key(resthouseid) references resthouse(resthouseid)
+	)engine=innodb;
+
+create table roomdetails(
+	resthouseid varchar (100),
+	roomdetailsid varchar (100),
+	roomcategory varchar (100),
+	roomtype varchar (100),
+	roomcount int,
+	constraint primary key(roomdetailsid),
+	constraint foreign key(resthouseid) references resthouse(resthouseid)
+	)engine=innodb;
+
+CREATE TABLE instument (
+  instumentId int(11) NOT NULL,
+  instrumentName varchar(255),
+  instrumentFee varchar(255),
+  Constraint primary key (instumentId)
+)ENGINE=INNODB;
+
+CREATE TABLE mealCatagory (
+  mealCataId int(11) NOT NULL,
+  mealCataName varchar(255),
+  Constraint primary key (mealCataId)
+)ENGINE=INNODB;
+
+CREATE TABLE meal (
+  mealId int(11) NOT NULL,
+  mealName varchar(255),
+  mealCatagoryId int(255),
+  mealDescription varchar(500),
+  mealFee decimal(10,2),
+  Constraint primary key (mealId),
+  Constraint foreign key(mealCatagoryId) references mealCatagory(mealCataId)
+)ENGINE=INNODB;
+
+CREATE TABLE event (
+  eventId int(11) NOT NULL,
+  eventName varchar(255),
+  packageid varchar(100),
+  date varchar(255),
+  time varchar(255),
+  organizer varchar(255),
+  organizerContact varchar(255),
+  locationid varchar(100),
+  cityid varchar(100),
+  eventFee varchar(255),
+  Constraint primary key (eventId),
+  Constraint foreign key(packageid) references package(packageid),
+  Constraint foreign key(locationid) references location(locationid),
+  Constraint foreign key(cityid) references city(cityid)
+)ENGINE=INNODB;
+
+
+insert into city values('c01','matara');
+insert into city values('c02','galle');
+insert into city values('c03','colombo');
+
+insert into locationtype values('lt01','heritage');
+insert into locationtype values('lt02','beachside');
+insert into locationtype values('lt03','mountanside');
+
+insert into location values('c01','lt01','l01','weherahena');
+insert into location values('c02','lt02','l02','fort');
+insert into location values('c03','lt02','l03','gollfast');
+
+insert into package values('p01','family');
+insert into package values('p02','education');
+insert into package values('p03','tuarisum');
+
+insert into resthouse values('p01','c01','l01','a01','rosa',5,1000.00);
+insert into resthouse values('p02','c02','l02','a02','bluesky',25,2500.00);
+insert into resthouse values('p03','c02','l03','a03','skylight',5,5000.00);
+
+
